@@ -1,0 +1,27 @@
+<div class="auth">
+    <h1 class="author__heading">Search Results</h1>
+</div>
+<sectin class="articles">
+    <ul class="article-ul">
+
+        <% data.forEach(post=> { %>
+
+
+            <li>
+                 <a href="/post/<%=post._id%>">
+                    <span>
+                        <%= post.title %>
+                    </span>
+                    <span class="article-list__date">
+                        <% function formatDate(date) { const options={ year: 'numeric' , month: 'long' , day: 'numeric'
+                            , hour: '2-digit' , minute: '2-digit' }; return new Date(date).toLocaleDateString('en-US',
+                            options); } %>
+
+                            <%= formatDate(post.createdAt) %>
+                    </span>
+                </a>
+            </li>
+
+            <% }) %>
+    </ul>
+</sectin>
